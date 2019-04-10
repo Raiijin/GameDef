@@ -10,7 +10,7 @@ public class Tile : MonoBehaviour
     public bool target = false; //true jeżeli jednostka wybierze to pole jako cel
     public bool selectable = false; // Pola na które gracz może się ruszyć
 
-    public List<Tile> adjacencyList = new List<Tile>(); // lista sąsiadów dla danego pola
+    public List<Tile> adjacencyList = new List<Tile>(); // lista pól sąsiadujących dla danego pola
 
     //Needed BFS (breadth first search)
     public bool visited = false; //czy pole było sprawdzane

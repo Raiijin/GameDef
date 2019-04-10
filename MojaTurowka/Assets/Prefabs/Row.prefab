@@ -104,6 +104,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b75b306df94dce4194bc2c30fd4b920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkable: 1
+  current: 0
+  target: 0
+  selectable: 0
+  adjacencyList: []
+  visited: 0
+  parent: {fileID: 0}
+  distance: 0
 --- !u!1 &787811531185200703
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,6 +216,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b75b306df94dce4194bc2c30fd4b920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkable: 1
+  current: 0
+  target: 0
+  selectable: 0
+  adjacencyList: []
+  visited: 0
+  parent: {fileID: 0}
+  distance: 0
 --- !u!1 &3688135865366588953
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,6 +328,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b75b306df94dce4194bc2c30fd4b920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkable: 1
+  current: 0
+  target: 0
+  selectable: 0
+  adjacencyList: []
+  visited: 0
+  parent: {fileID: 0}
+  distance: 0
 --- !u!1 &4032401902497137353
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +440,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b75b306df94dce4194bc2c30fd4b920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkable: 1
+  current: 0
+  target: 0
+  selectable: 0
+  adjacencyList: []
+  visited: 0
+  parent: {fileID: 0}
+  distance: 0
 --- !u!1 &4718982411885148153
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +552,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b75b306df94dce4194bc2c30fd4b920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkable: 1
+  current: 0
+  target: 0
+  selectable: 0
+  adjacencyList: []
+  visited: 0
+  parent: {fileID: 0}
+  distance: 0
 --- !u!1 &6123295509920546428
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,6 +664,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b75b306df94dce4194bc2c30fd4b920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkable: 1
+  current: 0
+  target: 0
+  selectable: 0
+  adjacencyList: []
+  visited: 0
+  parent: {fileID: 0}
+  distance: 0
 --- !u!1 &6507915635734500969
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +685,6 @@ GameObject:
   - component: {fileID: 5488929378241973399}
   - component: {fileID: 5079234877389334732}
   - component: {fileID: 9049563157734831502}
-  - component: {fileID: 4649506862290314079}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Tile
@@ -729,18 +776,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b75b306df94dce4194bc2c30fd4b920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4649506862290314079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6507915635734500969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b75b306df94dce4194bc2c30fd4b920, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  walkable: 1
+  current: 0
+  target: 0
+  selectable: 0
+  adjacencyList: []
+  visited: 0
+  parent: {fileID: 0}
+  distance: 0
 --- !u!1 &7753642970698487649
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +888,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b75b306df94dce4194bc2c30fd4b920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkable: 1
+  current: 0
+  target: 0
+  selectable: 0
+  adjacencyList: []
+  visited: 0
+  parent: {fileID: 0}
+  distance: 0
 --- !u!1 &7914237791300946255
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,6 +1000,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b75b306df94dce4194bc2c30fd4b920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkable: 1
+  current: 0
+  target: 0
+  selectable: 0
+  adjacencyList: []
+  visited: 0
+  parent: {fileID: 0}
+  distance: 0
 --- !u!1 &8957893107471075905
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,6 +1112,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b75b306df94dce4194bc2c30fd4b920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkable: 1
+  current: 0
+  target: 0
+  selectable: 0
+  adjacencyList: []
+  visited: 0
+  parent: {fileID: 0}
+  distance: 0
 --- !u!1 &9049065270081543942
 GameObject:
   m_ObjectHideFlags: 0

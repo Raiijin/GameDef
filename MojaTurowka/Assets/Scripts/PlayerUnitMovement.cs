@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : TacticsMove
+public class PlayerUnitMovement : TacticsMove
 {
     // Start is called before the first frame update
     void Start()
