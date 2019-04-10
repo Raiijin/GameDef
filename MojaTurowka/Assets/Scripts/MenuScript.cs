@@ -23,7 +23,7 @@ public class MenuScript : MonoBehaviour
 
         foreach (GameObject t in tiles)
         {
-            Destroy(t.GetComponent<Tile>());
+            DestroyImmediate(t.GetComponent<Tile>());
         }
     }
 }
