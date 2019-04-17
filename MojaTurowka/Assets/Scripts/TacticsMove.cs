@@ -9,7 +9,8 @@ public class TacticsMove : MonoBehaviour
 
     Stack<Tile> path = new Stack<Tile>(); //Droga po której jesdnostka będzie się poruszać
     Tile currentTile;
-    
+
+    public bool moving = false;
     public int move = 5; //zasięg ruchu
     public float jumpHeight = 2; //wysokość skoku/spadku
     public float moveSpeed = 2; //jak szybko jednostka będzie się poruszać przez pola
@@ -97,5 +98,20 @@ public class TacticsMove : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void MoveToTile(Tile tile) //wyznacz sciezke do celu
+    {
+        path.Clear();
+        tile.target = true;
+        moving = false; // jak tam dojdziesz zakoncz ruch
+
+        Tile next = tile; // pobieraj nastepny klocek
+        while (next !=null) //idz oznaczonymi klockami dopoki nie zgubisz parenta
+        {
+            path.Push(next);
+            next = next.parent; //parent to klocek nastepny w kolejce (trase mierzy od celu do jednostki, dlatego parent jest pozniejszy niz tile podstawowy)
+        }
+
     }
 }
