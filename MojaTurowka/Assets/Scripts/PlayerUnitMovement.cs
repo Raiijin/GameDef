@@ -15,13 +15,12 @@ public class PlayerUnitMovement : TacticsMove
     {
         if (!moving)
         {
-            
             FindSelectableTiles();
             CheckMouse();
         }
         else
         {
-            //todo Move();
+            Move();
         }
     }
 
@@ -32,17 +31,18 @@ public class PlayerUnitMovement : TacticsMove
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             RaycastHit hit;
-            if (Physics.Raycast(ray,out hit)) //jeżeli ray natknie się na collider
+            if (Physics.Raycast(ray,out hit)) //rob cos jeżeli ray natknie się na collider
             {
                 //tutaj programujemy reakcje jednostek miedzy soba, podgladanie statystyk, reakcje miedzy nimi 
 
                 if (hit.collider.tag=="Tile") //jeśli collider będzie miał tag tile
                 {
                     Tile t = hit.collider.GetComponent<Tile>();
-
-                    if (t.selectable) //jeśli klocek jest do wyboru, oznacz go jako target (zmien jego kolor)
+                    t.target = true;
+                    
+                    if (t.selectable) //jeśli klocek jest selectable, oznacz go jako target (zmien jego kolor)
                     {
-                        //todo: move mothafuckaaaaa
+                        
                         MoveToTile(t);
                     }
                 }

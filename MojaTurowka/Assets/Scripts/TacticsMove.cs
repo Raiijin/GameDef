@@ -13,7 +13,7 @@ public class TacticsMove : MonoBehaviour
     public bool moving = false;
     public int move = 5; //zasięg ruchu
     public float jumpHeight = 2; //wysokość skoku/spadku
-    public float moveSpeed = 2; //jak szybko jednostka będzie się poruszać przez pola
+    public float moveSpeed = 7; //jak szybko jednostka będzie się poruszać przez pola
 
     Vector3 velocity = new Vector3(); //jak szybko gracz się porusza;
     Vector3 heading = new Vector3(); //kierunek w którym porusza się jednostka
@@ -104,7 +104,7 @@ public class TacticsMove : MonoBehaviour
     {
         path.Clear();
         tile.target = true;
-        moving = false; // jak tam dojdziesz zakoncz ruch
+        moving = true; // jak tam dojdziesz zakoncz ruch
 
         Tile next = tile; // pobieraj nastepny klocek
         while (next !=null) //idz oznaczonymi klockami dopoki nie zgubisz parenta
@@ -113,5 +113,65 @@ public class TacticsMove : MonoBehaviour
             next = next.parent; //parent to klocek nastepny w kolejce (trase mierzy od celu do jednostki, dlatego parent jest pozniejszy niz tile podstawowy)
         }
 
+    }
+
+    public void Move()
+    {
+        if (path.Count>0) //poruszaj sie tylko wtedy kiedy pozostala jakakolwiek sciezka do celu
+        {
+            Tile t = path.Peek();
+            Vector3 target = t.transform.position;
+
+
+
+            target.y += halfHeight+t.GetComponent<Collider>().bounds.extents.y; //ustaw gracza POWYZEJ klocka - bez tego jednostka bedzie wchodzic w plansze
+
+            if (Vector3.Distance(transform.position,target)>=0.05f) //oblicz odległość jednostki od klocka
+            {
+                CalculateHeading(target);
+                SetHorizontalVelocity();
+
+                transform.forward = heading; //wybierz kierunek w ktorym jednostka ma sie poruszac
+                transform.position += velocity * Time.deltaTime; //update position
+            }
+            else
+            {
+                //jezeli zblizysz sie wystarczajaco blisko srodka (ponizej 0.05) to wycecntruj pozycje jednostki
+                transform.position = target;
+                path.Pop(); // wyrzuc ten klocek z llisty Tile
+            }
+        }
+        else
+        {
+            RemoveSelectableTiles();
+            moving = false;
+        }
+    }
+
+    protected void RemoveSelectableTiles() // usuwamy wszystkie znaczniki selectable
+    {
+
+        if (currentTile!=null)
+        {
+            currentTile.current = false;
+            currentTile = null;
+        }
+        foreach (Tile tile in selectableTiles) //reset w tabeli
+        {
+            tile.Reset();
+        }
+
+        selectableTiles.Clear(); //zerowanie selectable tiles
+    }
+
+    void CalculateHeading(Vector3 target)
+    {
+        heading = target - transform.position;
+        heading.Normalize();
+    }
+
+    void SetHorizontalVelocity()
+    {
+        velocity = heading * moveSpeed;
     }
 }
