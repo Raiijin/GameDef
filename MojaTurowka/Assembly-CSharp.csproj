@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\PlayerUnitMovement.cs" />
     <Compile Include="Assets\Scripts\TacticsMove.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
+    <Compile Include="Assets\Scripts\TurnManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Domin/AppData/Local/gitkraken/app-3.6.3/GameDef/MojaTurowka/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
