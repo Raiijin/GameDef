@@ -13,6 +13,12 @@ public class PlayerUnitMovement : TacticsMove
     // Update is called once per frame
     void Update()
     {
+
+        if (!turn)
+        {
+            return;
+        }
+
         if (!moving)
         {
             FindSelectableTiles();
