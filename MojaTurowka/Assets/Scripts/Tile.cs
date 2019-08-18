@@ -50,7 +50,7 @@ public class Tile : MonoBehaviour
         selectable = false; 
 
         visited = false; 
-        Tile parent = null; 
+        parent = null; 
         distance = 0; 
     }
 

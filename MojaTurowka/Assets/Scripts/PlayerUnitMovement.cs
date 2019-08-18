@@ -19,18 +19,18 @@ public class PlayerUnitMovement : TacticsMove
             return;
         }
 
-        if (!moving)
+        if (!moving && !afterMove)
         {
             FindSelectableTiles();
-            CheckMouse();
-        }
+            CheckMouseForTile();
+        }       
         else
         {
             Move();
         }
     }
 
-    void CheckMouse() //sprawdz czy znajdziesz klikniecie myszka
+    void CheckMouseForTile() //sprawdz czy znajdziesz klikniecie myszka
     {
         if (Input.GetMouseButtonDown(0)) //if LPM jest wciśnięty 
         {
@@ -55,5 +55,8 @@ public class PlayerUnitMovement : TacticsMove
             }
 
         }
+
     }
+
+    
 }

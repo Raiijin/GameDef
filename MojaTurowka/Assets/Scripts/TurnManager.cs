@@ -24,7 +24,6 @@ public class TurnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(turnTeam.Count);
      if (turnTeam.Count==0) //dzieje się na początku gdy jeszcze nie ma pierwszego ruchu | gdy nikt się nie ruszył zacznij pierwszą turę
         {
             InitializeTeamQueue();

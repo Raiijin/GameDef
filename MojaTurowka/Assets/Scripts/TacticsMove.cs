@@ -13,6 +13,7 @@ public class TacticsMove : MonoBehaviour
     Tile currentTile;
 
     public bool moving = false;
+    public static bool afterMove = false;
     public int move = 5; //zasięg ruchu
     public float jumpHeight = 2; //wysokość skoku/spadku
     public float moveSpeed = 7; //jak szybko jednostka będzie się poruszać przez pola
@@ -29,7 +30,6 @@ public class TacticsMove : MonoBehaviour
         halfHeight = GetComponent<Collider>().bounds.extents.y;
 
         TurnManager.AddUnit(this);
-
     }
 
     /**
@@ -111,9 +111,11 @@ public class TacticsMove : MonoBehaviour
         moving = true; // jak tam dojdziesz zakoncz ruch
 
         Tile next = tile; // pobieraj nastepny klocek
+        Debug.Log(path.Count);
         while (next !=null) //idz oznaczonymi klockami dopoki nie zgubisz parenta
         {
             path.Push(next);
+            Debug.Log(path.Count);
             next = next.parent; //parent to klocek nastepny w kolejce (trase mierzy od celu do jednostki, dlatego parent jest pozniejszy niz tile podstawowy)
         }
 
@@ -147,10 +149,9 @@ public class TacticsMove : MonoBehaviour
         }
         else
         {
+            afterMove = true;
             RemoveSelectableTiles();
-            moving = false;
-
-            TurnManager.EndTurn();
+            moving = false;          
         }
     }
 
